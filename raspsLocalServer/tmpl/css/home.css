@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body .home .right-panel {
+    float: right;
+    width: 20%;
+    min-height: 80vh;
+    background-color: green;
+}
+
+body .home .main-panel {
+    width: 80%;
+    background-color: black;
+}
+
+body .home .main-panel .container {
+    position: relative;
+    height: 0;
+    padding-bottom: 80vh;
+}
+
+body .home .main-panel .container .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+body .home .bottom-panel {
+    min-height: 20vh;
+    width: 100%;
+    background-color: darkred;
+}
