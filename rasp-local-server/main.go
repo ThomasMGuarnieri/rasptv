@@ -10,7 +10,7 @@ func main() {
 	http.HandleFunc("/", handlers.MakeHandler(handlers.HomeHandler))
 	http.HandleFunc("/css/", handlers.ServeResourceHandler)
 
-	print("Listen on port :8080\n")
+	print("Listen on port :3000\n")
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
