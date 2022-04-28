@@ -5,8 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>raps-TV</title>
-    <link rel="stylesheet" type="text/css" href="css/home.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
 </head>
+<style>
+    body .home .bottom-panel .marquee {
+        animation: marquee {{ .AnimationTime }}s linear infinite;
+    }
+</style>
 <body>
     <div class="home">
         <div class="right-panel"></div>
@@ -20,7 +25,11 @@
             </div>
         </div>
         <div class="bottom-panel">
-            este é o bottom panel
+            <div class="marquee">
+                {{ range .BottomPhrases }}
+                <div class="phrase">{{ . }}</div>
+                {{ end }}
+            </div>
         </div>
     </div>
 </body>

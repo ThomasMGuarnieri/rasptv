@@ -1,3 +1,5 @@
+@import "bottom-panel.css";
+
 body {
     margin: 0;
     padding: 0;
@@ -30,8 +32,3 @@ body .home .main-panel .container .video {
     border: 0;
 }
 
-body .home .bottom-panel {
-    min-height: 20vh;
-    width: 100%;
-    background-color: darkred;
-}

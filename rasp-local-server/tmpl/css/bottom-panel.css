@@ -1,0 +1,36 @@
+body .home .bottom-panel {
+    min-height: 20vh;
+    max-width: 100%;
+    /*box-shadow: 1px 1px 8px 3px #07488c inset;*/
+    background-color: #07488c;
+    overflow: hidden;
+}
+
+body .home .bottom-panel .marquee{
+    will-change: transform;
+
+    display: inline-block;
+    overflow: hidden;
+    padding-top: 3vh;
+    font-size: 12vh;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+
+    /* animation properties */
+    padding-left: 100%;
+}
+
+body .home .bottom-panel .marquee .phrase {
+    display: inline-block;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}

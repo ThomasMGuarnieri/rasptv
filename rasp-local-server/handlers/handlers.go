@@ -5,7 +5,9 @@ import (
 )
 
 type Page struct {
-	PlaylistId string
+	PlaylistId    string
+	BottomPhrases []string
+	AnimationTime int
 }
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
