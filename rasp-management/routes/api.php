@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\DeviceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::controller(DeviceController::class)->group(function () {
+    Route::post('/device', 'store');
+    Route::get('/device/{Device}', 'needsToRefresh');
+    Route::get('/device/{Device}/refresh', 'refresh');
+    Route::post('/device/{Device}/playlist', 'setPlaylist');
+    Route::post('/device/{Device}/phrase', 'setPhrase');
+    Route::delete('/device/{Device}/phrase/{Phrase}', 'unsetPhrase');
 });
