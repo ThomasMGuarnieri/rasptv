@@ -22,16 +22,6 @@ class DeviceController extends Controller
         return new DeviceResource($device);
     }
 
-    public function store(Request $request)
-    {
-        $device = new Device();
-        $device->name = $request->name;
-        $device->location = $request->location;
-        $device->save();
-
-        return response(['id' => $device->id], 200);
-    }
-
     public function setPlaylist(Device $device, Request $request)
     {
         $playlist = Playlist::updateOrCreate(['external_id' => $request->get('external_id')]);
