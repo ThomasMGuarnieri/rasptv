@@ -1,0 +1,21 @@
+body .home .right-panel {
+    float: right;
+    width: 20%;
+    min-height: 80vh;
+    background-color: #3faddc;
+}
+
+body .home .right-panel #clock{
+    font-size: 3vh;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+body .home .right-panel .extra-info {
+    padding: 5vh 4vh 4vh;
+    font-size: 2vh;
+    color: whitesmoke;
+    font-weight: bold;
+    text-align: center;
+}

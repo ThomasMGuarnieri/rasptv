@@ -1,15 +1,11 @@
 @import "bottom-panel.css";
+@import "right-panel.css";
+
+/* COMPANY MAIN COLOR: #07488c */
 
 body {
     margin: 0;
     padding: 0;
-}
-
-body .home .right-panel {
-    float: right;
-    width: 20%;
-    min-height: 80vh;
-    background-color: green;
 }
 
 body .home .main-panel {
