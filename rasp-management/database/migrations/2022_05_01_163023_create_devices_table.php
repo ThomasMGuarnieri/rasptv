@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->text('location');
+            $table->text('location')->nullable();
             $table->boolean('refresh')->default(true);
-            $table->unsignedBigInteger('playlist_id')->nullable();
-            $table->foreign('playlist_id')->references('id')->on('playlists')->nullable();
+            $table->string('playlist_id')->nullable();
+            $table->text('phrases')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

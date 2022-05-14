@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Phrase;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DeviceResource extends JsonResource
@@ -17,8 +16,8 @@ class DeviceResource extends JsonResource
     {
         return [
             'uuid' => $this->id,
-            'playlist' => new PlaylistResource($this->playlist),
-            'phrases' => PhrasesCollection::collection($this->phrases)
+            'playlist_id' => $this->playlist_id,
+            'phrases' => $this->phrases
         ];
     }
 }

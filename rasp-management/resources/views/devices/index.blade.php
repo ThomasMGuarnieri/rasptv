@@ -11,11 +11,11 @@
     <div class="container mt-2">
         <div class="row">
             <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
+                <div>
                     <h2>Rasp TV</h2>
                 </div>
-                <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('devices.create') }}"> Create Device</a>
+                <div class="pull-right mb-3 mt-4">
+                    <a class="btn btn-success" href="{{ route('devices.create') }}"> Adicionar novo dispositivo</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                         <a class="btn btn-primary" href="{{ route('devices.edit',$device->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Remover</button>
                     </form>
                 </td>
             </tr>

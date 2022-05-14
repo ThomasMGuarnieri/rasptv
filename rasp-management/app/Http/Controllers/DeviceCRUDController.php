@@ -21,18 +21,12 @@ class DeviceCRUDController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'location' => 'required|string|nullable'
-        ]);
+        $request->validate($this->toValidate());
 
-        $device = new Device;
-        $device->name = $request->name;
-        $device->location = $request->location;
-        $device->save();
+        $this->save(new Device, $request);
 
         return redirect()->route('devices.index')
-            ->with('success', 'Device has been created successfully.');
+            ->with('success', 'Dispositivo adicionado com sucesso.');
     }
 
     public function show(Device $device)
@@ -47,24 +41,41 @@ class DeviceCRUDController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'location' => 'required|string|nullable'
-        ]);
+        $request->validate($this->toValidate());
 
         $device = Device::find($id);
-        $device->name = $request->name;
-        $device->location = $request->location;
-        $device->save();
+
+        $this->save($device, $request);
+
+        $device->mustBeRefreshed();
 
         return redirect()->route('devices.index')
-            ->with('success', 'Device Has Been updated successfully');
+            ->with('success', 'Dispositivo atualizado com sucesso');
     }
 
     public function destroy(Device $device)
     {
         $device->delete();
         return redirect()->route('devices.index')
-            ->with('success', 'Device has been deleted successfully');
+            ->with('success', 'Dispositivo removido');
+    }
+
+    private function toValidate(): array
+    {
+        return [
+            'name' => 'required|string',
+            'location' => 'string',
+            'playlist_id' => 'required|string',
+            'phrases' => 'required|string'
+        ];
+    }
+
+    private function save(Device $device, Request $request)
+    {
+        $device->name = $request->name;
+        $device->location = $request->location;
+        $device->playlist_id = $request->playlist_id;
+        $device->phrases = $request->phrases;
+        $device->save();
     }
 }

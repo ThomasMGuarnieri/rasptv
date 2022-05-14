@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::controller(DeviceController::class)->group(function () {
-    Route::post('/device', 'store');
-    Route::get('/device/{Device}', 'needsToRefresh');
-    Route::get('/device/{Device}/refresh', 'refresh');
-    Route::post('/device/{Device}/playlist', 'setPlaylist');
-    Route::post('/device/{Device}/phrase', 'setPhrase');
-    Route::delete('/device/{Device}/phrase/{Phrase}', 'unsetPhrase');
+    Route::get('/device/{device}', 'needsToRefresh');
+    Route::get('/device/{device}/refresh', 'refresh');
 });
