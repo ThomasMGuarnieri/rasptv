@@ -10,13 +10,18 @@ class DeviceController extends Controller
     public function needsToRefresh(Device $device)
     {
         $isRefreshed = $device->refresh;
-        $device->alreadyBeenRefreshed();
 
-        return $isRefreshed;
+        $date = [
+            'refresh' => $isRefreshed
+        ];
+
+        return  json_encode($date);
     }
 
     public function refresh(Device $device)
     {
+        $device->alreadyBeenRefreshed();
+
         return new DeviceResource($device);
     }
 }
