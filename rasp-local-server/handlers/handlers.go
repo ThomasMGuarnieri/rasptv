@@ -29,6 +29,6 @@ func MakeHandler(fn func(http.ResponseWriter, *http.Request)) http.HandlerFunc {
 }
 
 func ServeResourceHandler(w http.ResponseWriter, req *http.Request) {
-	path := "tmpl" + req.URL.Path
+	path := "/var/www/tmpl" + req.URL.Path
 	http.ServeFile(w, req, path)
 }

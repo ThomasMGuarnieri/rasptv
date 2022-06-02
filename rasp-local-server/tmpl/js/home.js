@@ -19,7 +19,7 @@ function checkRefresh() {
 
     let deviceId = 'd27cb86e-feb8-4161-aa33-090e35a1640c';
 
-    fetch(`http://localhost/api/device/${deviceId}`)
+    fetch(`http://192.168.1.7/api/device/${deviceId}`)
         .then(request => {
             request.json().then(data => {
                 if (data.refresh === 1) {

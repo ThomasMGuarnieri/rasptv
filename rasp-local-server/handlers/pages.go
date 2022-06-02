@@ -7,10 +7,12 @@ import (
 	"regexp"
 )
 
-var templates = template.Must(template.ParseFiles("tmpl/home.html"))
+var templates = template.Must(template.ParseFiles("/var/www/tmpl/home.html"))
 var validPath = regexp.MustCompile("^/")
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
+	r.Header.Add("Cache-Control", "no-cache, must-revalidate")
+
 	p := &Page{
 		PlaylistId:    repository.GetPlaylistId(),
 		BottomPhrases: repository.GetMarqueeBottomPhrases(),

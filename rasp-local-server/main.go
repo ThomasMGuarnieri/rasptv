@@ -11,7 +11,5 @@ func main() {
 	http.HandleFunc("/css/", handlers.ServeResourceHandler)
 	http.HandleFunc("/js/", handlers.ServeResourceHandler)
 
-	print("Listen on port :3000\n")
-
 	log.Fatal(http.ListenAndServe(":3000", nil))
 }

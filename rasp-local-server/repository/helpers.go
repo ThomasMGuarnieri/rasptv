@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-var endpoint = "http://localhost"
+var endpoint = "http://192.168.1.7"
 var DeviceId = "d27cb86e-feb8-4161-aa33-090e35a1640c"
 
 type Data struct {
